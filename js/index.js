@@ -19,19 +19,21 @@ function addData() {
     var username = $("#username").val();
     var password = $("#password").val();
 
-    var User = Bmob.Object.extend("User")
-    var user = new User();
+    var Student = Bmob.Object.extend("Student")
+    var stu = new Student();
 
-    user.set("username", username)
-    user.set("password", password)
+    stu.set("username", username)
+    stu.set("password", password)
 
-    user.save(null, {
+    stu.save(null, {
         success: function (object) {
             console.log("object:" + object);
+            alert("success")
         },
         error: function (model, error) {
             console.log("model" + model);
             console.log("error:" + error);
+            alert("error")
         }
     })
 
